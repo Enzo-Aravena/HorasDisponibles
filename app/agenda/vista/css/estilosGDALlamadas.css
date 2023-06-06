@@ -1,0 +1,19 @@
+.dv-label_cabezera{
+color:#202020;
+font-size: 11px !important;
+font-weight:normal;
+background-color: #A0A0A0;
+text-align: center;
+border:1px black solid;
+text-align: center;
+vertical-align:middle;
+}
+
+
+.dv-label{
+color:#0000ff;
+font:11px Helvetica, Helvetica, sans-serif; 
+font-weight:normal;
+border:1px black solid;
+text-align: center;
+}

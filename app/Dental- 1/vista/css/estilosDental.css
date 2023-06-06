@@ -1,0 +1,63 @@
+.Error{
+	color: red;
+    font-weight: bold;
+}
+
+.correct{
+    color: green;
+    font-weight: bold;
+}
+
+.TextoPopup{
+	color: #142def;
+	font-size: larger;
+    font-weight: bold;
+}
+
+.modal{
+	display: block;
+    background-color: #1d1c1c;
+    z-index: 1001;
+    opacity: 0.94;
+}
+
+.modal-header{
+	background: #007aff;
+    min-height: 16.428571429px;
+    padding: 5px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal-title{
+	margin: 0;
+    line-height: 1.428571429;
+    color: white;
+}
+
+.close {
+    float: right;
+    font-size: 31px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .2;
+    filter: alpha(opacity=20);
+        margin-top: -7.2%;
+}
+
+.modal-dialog {
+    right: auto;
+    left: 50%;
+    width: 386px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.modal-footer {
+    padding: 19px 20px 20px;
+    margin-top: 0px;
+    text-align: center;
+    border-top: none;
+}
+

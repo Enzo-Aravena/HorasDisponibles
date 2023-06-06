@@ -1,0 +1,62 @@
+.bordes{
+	border: solid 1px #999999;
+    border-width: 2px !important;
+    
+}
+
+.bordesCEntro{
+	border: solid 1px #999999;
+    border-width: 2px !important;   
+}
+
+.texto{
+	width: 27%;
+}
+
+.fechas{
+	    width: 10em !important;
+}
+
+.centros{
+	width: 64%;
+    height: 4%;
+   /* margin-top: -61px;
+    margin-left: 32% !important;*/
+    border-style: solid;
+    border-color: rgb(153, 153, 153);
+    border: solid 1px #999999;
+    border-width: 2px !important;   
+    border-image: initial;
+}
+
+.DiasSemana{
+	border: solid 1px #999999;
+    border-width: 2px !important;
+    width: 43%;
+}
+
+.actosDato{
+	border: solid 1px #999999;
+    border-width: 2px !important;
+    width: 20%;
+    margin-top: -58px;
+    margin-left: 44% !important;
+    height: 44px;
+}
+
+.selectBox{
+	width: 18em;
+    margin-left: 40%;
+    margin-top: 8%;
+}
+
+
+.botonAceptar{
+	margin-top: -55px;
+    margin-left: 60%;
+}
+
+.excel{
+	    margin-top: -62px;
+    margin-left: 71% !important;
+}

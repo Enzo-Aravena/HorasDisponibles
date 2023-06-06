@@ -1,0 +1,30 @@
+.radios{
+    border: solid 1px #999999;
+    height: auto;
+}
+
+.texto{
+	width: 32%;
+	margin-top: 1%;
+}
+
+.criticidades{
+	width: 61%;
+    margin-top: -3%; 
+    margin-left: 70%;
+}
+
+
+/*******************************************/
+
+.loader{
+    position: fixed;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+    opacity: 0.8;
+    width: 109%;
+    min-width: 14em;
+    margin-top: -39%;
+    margin-left: -2%;
+}

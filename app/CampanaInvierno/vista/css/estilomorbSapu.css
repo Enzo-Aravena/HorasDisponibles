@@ -1,0 +1,45 @@
+.tituloPrincipal{
+	background: #6F85FF;
+	color: white;
+	border-style: inset;
+	border-width: 2px;
+}
+
+.tituloSecundario{
+	background: #5252FC;
+	color: white;
+	border-style: inset;
+	border-width: 2px;
+	/*text-align: center;*/
+}
+
+
+.cuerpo{
+	border-style: inset;
+	border-width: 2px;
+	/*text-align: center;*/
+}
+
+
+.tituloSecundario2{
+	background: #5252FC;
+	color: white;
+	border-style: inset;
+	border-width: 2px;
+	text-align: center;
+}
+
+.cuerpo2{
+	border-style: inset;
+	border-width: 2px;
+	text-align: center;
+}
+
+
+
+.modal-dialog {
+    right: none;
+    left: 0% !important;
+    width: 600px;
+    padding-top: 30px;
+    padding-bottom: 30px;

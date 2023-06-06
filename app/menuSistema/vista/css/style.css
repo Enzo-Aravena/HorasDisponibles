@@ -1,0 +1,21 @@
+
+.loader{
+    position: fixed;
+    background-color: black;
+    z-index: 1001;
+    opacity: 0.8;
+    width: 109%;
+    min-width: 14em;
+    margin-top: -7%;
+    margin-left: -51%;
+    height: 200%;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    background-image: url ("../../../lib/images/tic_salud.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: inline;
+    }

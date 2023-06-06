@@ -1,0 +1,30 @@
+.tituloPrincipal{
+	background: #6F85FF;
+    color: white;
+    border-style: inset;
+    border-width: 2px;
+}
+
+.tituloSecundario{
+	background: #BAC4FF;
+	
+	border-style: inset;
+	border-width: 2px;
+	/*text-align: center;*/
+}
+
+
+.cuerpo{
+	border-style: inset;
+	border-width: 2px;
+	/*text-align: center;*/
+}
+
+
+.tituloSecundario2{
+	background:#BAC4FF;
+	
+	border-style: inset;
+	border-width: 2px;
+	text-align: center;
+}

@@ -1,0 +1,32 @@
+.ImagenEstado{
+	background-image: url("../../../../lib/images/loading-mark.png");
+	background-repeat: no-repeat;
+	width:20%;
+	height:3em;
+}
+
+
+.ImagenEstadoCorrecto{
+	background-image: url("../../../../lib/images/correct.png");
+	background-repeat: no-repeat;
+	width:20%;
+	height:3em;
+}
+
+.ImagenEstadoIncorrecto{
+	background-image: url("../../../../lib/images/incorrect.png");
+	background-repeat: no-repeat;
+	width:20%;
+	height:3em;
+}
+
+
+.textoSuccess{
+	font-size: xx-large;
+}
+
+
+.mostrarForm{
+	/*margin-top: -19em;*/
+    margin-left: 8%;
+}

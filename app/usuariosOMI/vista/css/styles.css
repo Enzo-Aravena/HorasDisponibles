@@ -1,0 +1,137 @@
+.popup_contenido{
+    min-height: 0em;
+    height: 13.3em;
+    width: 109%;
+    min-width: 14em;
+    margin-left: -4.5%;
+    margin-top: 1%;
+}
+
+
+
+.black_overlay{
+	display: none;
+	position: absolute;
+	top: -26%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index:1001;
+    opacity: 0.94;
+}
+
+ 
+.white_content {
+	display: none;
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	height: 50%;
+	padding: 16px;
+	border: 16px solid orange;
+	background-color: white;
+	z-index:1002;
+	overflow: auto;
+}
+
+.dimensiones{
+    width: 26%;
+    height: auto;
+    position: absolute;
+    color: #000000;
+    background-color: #ffffff;
+    top: 44%;
+    left: 42%;
+    margin-top: -207px;
+    margin-left: -150px;
+    background-color: #007aff;
+    min-height: 30px;
+    min-width: 16em;
+}
+
+.tituloCabecera{
+	color: white;
+    font-size: 124%;
+    margin-left: 2%;
+    margin-top: 4px;
+};
+
+
+.cerrar {
+   float: right;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+
+.texto{
+    font-size: 1.5em;
+    color: #0013b9;
+    text-align: center;
+    margin-top: 6%;
+    padding-left: 2%;
+    margin-right: 2%;
+}
+
+.textUno{
+        font-size: 1.5em;
+    color: #0013b9;
+    text-align: center;
+    margin-top: 8%;
+    padding-left: 4%;
+}
+
+
+.botonRadio{
+    background: #007aff;
+    display: inline-block;
+    width: 10em;
+    color: white;
+    font-size: 1em;
+    
+}
+
+.radios{
+   display: contents;
+    margin-top: -4px !important;
+    margin-left: 11px !important;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+
+
+.botonesIngresoDatos{
+    width: 85px;
+    height: 88px;
+    padding: 10px 16px;
+    border-radius: 65px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+
+.boton{
+    background: transparent;
+    color: #007aff;
+    border-color: #007aff;
+}
+
+.tituloCabeceraExamen{
+    display: block;
+    position: relative;
+    background: #007aff;
+    color: white;
+    padding-right: 17px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.6);
+    z-index: 2;
+    border-right: 2px solid rgba(0,0,0,.2);
+}
+
+
+.cuerpoTabla{
+  display: block; height: 341px; overflow: auto; overflow-x: hidden;
+}

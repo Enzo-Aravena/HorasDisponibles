@@ -281,59 +281,59 @@ if (!oci_execute($statement2)) {
             <a class="enlaceboton" href="#Teste2">Acto</a>
         </label>
     </div>
-        <br><br>
+    <br><br>
     <form method="post" style="margin-top: auto;">
         <label for="desde">Desde:</label>
         <input type="text" id="desde" name="desde" value="<?php echo $desde; ?>">
         <label for="hasta">Hasta:</label>
         <input type="text" id="hasta" name="hasta" value="<?php echo $hasta; ?>">
         <div class="container-fluid">
-        <br><br>
+            <br><br>
 
-                    <label style="margin-left: auto;" class="control-label col-md-1">Centro :</label>
-                    <label class="radio-inline" style="margin-right: 7px !important;">
-                        <input name="sector" type="radio" value="0" <?= ($sector == '0') ? 'checked' : '' ?>>
-                        <span style="font-size: 14px;">Todos</span>
-                    </label>
+            <label style="margin-left: auto;" class="control-label col-md-1">Centro :</label>
+            <label class="radio-inline" style="margin-right: 7px !important;">
+                <input name="sector" type="radio" value="0" <?= ($sector == '0') ? 'checked' : '' ?>>
+                <span style="font-size: 14px;">Todos</span>
+            </label>
 
-                    <label class="radio-inline">
-                        <input name="sector" type="radio" value="3" <?= ($sector == '3') ? 'checked' : '' ?>>
-                        <span style="font-size: 14px;">S.L</span>
-                    </label>
+            <label class="radio-inline">
+                <input name="sector" type="radio" value="3" <?= ($sector == '3') ? 'checked' : '' ?>>
+                <span style="font-size: 14px;">S.L</span>
+            </label>
 
-                    <label class="radio-inline">
-                        <input name="sector" type="radio" value="1" <?= ($sector == '1') ? 'checked' : '' ?>>
-                        <span style="font-size: 14px;">C.U</span>
-                    </label>
+            <label class="radio-inline">
+                <input name="sector" type="radio" value="1" <?= ($sector == '1') ? 'checked' : '' ?>>
+                <span style="font-size: 14px;">C.U</span>
+            </label>
 
-                    <label class="radio-inline">
-                        <input name="sector" type="radio" value="2" <?= ($sector == '2') ? 'checked' : '' ?>>
-                        <span style="font-size: 14px;">L.F</span>
-                    </label>
+            <label class="radio-inline">
+                <input name="sector" type="radio" value="2" <?= ($sector == '2') ? 'checked' : '' ?>>
+                <span style="font-size: 14px;">L.F</span>
+            </label>
 
-                    <label class="radio-inline">
-                        <input name="sector" type="radio" value="4" <?= ($sector == '4') ? 'checked' : '' ?>>
-                        <span style="font-size: 14px;">L.H</span>
-                    </label>
+            <label class="radio-inline">
+                <input name="sector" type="radio" value="4" <?= ($sector == '4') ? 'checked' : '' ?>>
+                <span style="font-size: 14px;">L.H</span>
+            </label>
 
-                    <label class="radio-inline">
-                        <input name="sector" type="radio" value="5" <?= ($sector == '5') ? 'checked' : '' ?>>
-                        <span style="font-size: 14px;">C.S.H</span>
-                    </label>
+            <label class="radio-inline">
+                <input name="sector" type="radio" value="5" <?= ($sector == '5') ? 'checked' : '' ?>>
+                <span style="font-size: 14px;">C.S.H</span>
+            </label>
 
-                    <label class="radio-inline">
-                        <input name="sector" type="radio" value="12" <?= ($sector == '12') ? 'checked' : '' ?>>
-                        <span style="font-size: 14px;">P.G.W</span>
-                    </label>
-                    <label class="radio-inline">
-                        <input name="sector" type="radio" value="6" <?= ($sector == '6') ? 'checked' : '' ?>>
-                        <span style="font-size: 14px;">COSAM</span>
-                    </label>
+            <label class="radio-inline">
+                <input name="sector" type="radio" value="12" <?= ($sector == '12') ? 'checked' : '' ?>>
+                <span style="font-size: 14px;">P.G.W</span>
+            </label>
+            <label class="radio-inline">
+                <input name="sector" type="radio" value="6" <?= ($sector == '6') ? 'checked' : '' ?>>
+                <span style="font-size: 14px;">COSAM</span>
+            </label>
 
-                    <label class="radio-inline">
-                        <input name="sector" type="radio" value="13" <?= ($sector == '13') ? 'checked' : '' ?>>
-                        <span style="font-size: 14px;">L.T </span>
-                    </label>
+            <label class="radio-inline">
+                <input name="sector" type="radio" value="13" <?= ($sector == '13') ? 'checked' : '' ?>>
+                <span style="font-size: 14px;">L.T </span>
+            </label>
 
 
 
@@ -370,7 +370,7 @@ if (!oci_execute($statement2)) {
     </table>
 
     <table id="Teste2" class="table table-striped table-bordered" style="width:100%">
-    <br><br>
+        <br><br>
         <thead>
             <tr>
                 <th>Fecha</th>

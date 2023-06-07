@@ -198,6 +198,7 @@ if ($sector != '' && $sector != '0') {
 
 
 
+
 if (!oci_execute($statement1)) {
     $error = oci_error($statement1);
     die("Error en la ejecución de la consulta: " . $error['message']);
@@ -217,17 +218,21 @@ if (!oci_execute($statement2)) {
     <style>
         .table {
             display: none;
-            /* Oculta las tablas por defecto */
+
         }
 
 
         #Tester:target {
             display: table;
+            scroll-margin-top: 200vh;
+            scroll-behavior: smooth;
         }
 
 
         #Teste2:target {
             display: table;
+            scroll-margin-top: 200vh;
+            scroll-behavior: smooth;
         }
 
         .enlaceboton {
@@ -240,13 +245,19 @@ if (!oci_execute($statement2)) {
             text-decoration: none;
         }
 
-        .enlaceboton:link,
-        .enlaceboton:visited {
+        .enlaceboton:link {
             border-top: 1px solid #cccccc;
             border-bottom: 2px solid #666666;
             border-left: 1px solid #cccccc;
             border-right: 2px solid #666666;
+
         }
+
+
+        .enlaceboton:active {
+            background-color: grey !important;
+        }
+
 
         .enlaceboton:hover {
             border-bottom: 1px solid #cccccc;
@@ -254,15 +265,37 @@ if (!oci_execute($statement2)) {
             border-right: 1px solid #cccccc;
             border-left: 2px solid #666666;
         }
+
+        .marcado {
+            background-color: grey !important;
+            cursor: not-allowed;
+
+        }
     </style>
+
 
 </head>
 
 <body>
+
+
+    <script>
+        function marcarBoton(boton) {
+            var botones = document.getElementsByClassName("enlaceboton");
+            for (var i = 0; i < botones.length; i++) {
+                botones[i].classList.remove("marcado");
+            }
+            boton.classList.add("marcado");
+        }
+    </script>
+
+
+
     <script type="text/javascript">
         function ver(cual) {
             var tester = document.getElementById(cual);
             tester.style.display = 'block';
+
         }
 
         function ciego(cual) {
@@ -270,76 +303,99 @@ if (!oci_execute($statement2)) {
             tester.style.display = 'none';
         }
     </script>
-    <br>
-    <div>
-        <label style="font-weight: 600;">Seleccione el tipo de Vista que desea : </label>
-        <label class="radio-inline">
 
-            <a class="enlaceboton" href="#Tester">Agenda</a>
-        </label>
-        <label class="radio-inline">
-            <a class="enlaceboton" href="#Teste2">Acto</a>
-        </label>
-    </div>
+    <br>
+
     <br><br>
     <form method="post" style="margin-top: auto;">
-        <label for="desde">Desde:</label>
-        <input type="text" id="desde" name="desde" value="<?php echo $desde; ?>">
-        <label for="hasta">Hasta:</label>
-        <input type="text" id="hasta" name="hasta" value="<?php echo $hasta; ?>">
-        <div class="container-fluid">
-            <br><br>
+        <br>
+        <div class="form-horizontal"> &nbsp; </div>
+        <div class="form-horizontal">
+            <div class="col-md-13">
+                <div class="form-group">
 
-            <label style="margin-left: auto;" class="control-label col-md-1">Centro :</label>
-            <label class="radio-inline" style="margin-right: 7px !important;">
-                <input name="sector" type="radio" value="0" <?= ($sector == '0') ? 'checked' : '' ?>>
-                <span style="font-size: 14px;">Todos</span>
-            </label>
+                    <label class="control-label col-md-1"> Seleccione Fecha :</label>
+                    <div class="col-md-2">
+                        <div class="input-group date datepicker" data-date-autoclose="true" data-date-format="dd/mm/yyyy" id="desde">
+                            <input class="form-control" type="text" onchange="this.form.submit()" id="desde" name="desde" value="<?php echo $desde; ?>" style="height: 28px !important;" autocomplete="off" />
+                            <span class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group date datepicker" data-date-autoclose="true" data-date-format="dd/mm/yyyy" id="hasta">
+                            <input class="form-control" type="text" onchange="this.form.submit()" id="hasta" name="hasta" value="<?php echo $hasta; ?>" style="height: 28px !important;" autocomplete="off" />
+                            <span class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <br><br>
+
+        <label style="margin-left: auto;" class="control-label col-md-1">Centro :</label>
+        <label class="radio-inline" style="margin-right: 1px !important;">
+            <input name="sector" type="radio" onchange="this.form.submit()" value="0" <?= ($sector == '0') ? 'checked' : '' ?>>
+            <span style="font-size: 14px;">Todos</span>
+        </label>
+
+        <label class="radio-inline">
+            <input name="sector" type="radio" onchange="this.form.submit()" value="3" <?= ($sector == '3') ? 'checked' : '' ?>>
+            <span style="font-size: 14px;">S.L</span>
+        </label>
+
+        <label class="radio-inline">
+            <input name="sector" type="radio" onchange="this.form.submit()" value="1" <?= ($sector == '1') ? 'checked' : '' ?>>
+            <span style="font-size: 14px;">C.U</span>
+        </label>
+
+        <label class="radio-inline">
+            <input name="sector" type="radio" onchange="this.form.submit()" value="2" <?= ($sector == '2') ? 'checked' : '' ?>>
+            <span style="font-size: 14px;">L.F</span>
+        </label>
+
+        <label class="radio-inline">
+            <input name="sector" type="radio" onchange="this.form.submit()" value="4" <?= ($sector == '4') ? 'checked' : '' ?>>
+            <span style="font-size: 14px;">L.H</span>
+        </label>
+
+        <label class="radio-inline">
+            <input name="sector" type="radio" onchange="this.form.submit()" value="5" <?= ($sector == '5') ? 'checked' : '' ?>>
+            <span style="font-size: 14px;">C.S.H</span>
+        </label>
+
+        <label class="radio-inline">
+            <input name="sector" type="radio" onchange="this.form.submit()" value="12" <?= ($sector == '12') ? 'checked' : '' ?>>
+            <span style="font-size: 14px;">P.G.W</span>
+        </label>
+        <label class="radio-inline">
+            <input name="sector" type="radio" onchange="this.form.submit()" value="6" <?= ($sector == '6') ? 'checked' : '' ?>>
+            <span style="font-size: 14px;">COSAM</span>
+        </label>
+
+        <label class="radio-inline">
+            <input name="sector" type="radio" onchange="this.form.submit()" value="13" <?= ($sector == '13') ? 'checked' : '' ?>>
+            <span value="Filtrar" style="font-size: 14px;">L.T </span>
+        </label>
+
+
+        <br><br>
+        <div>
+            <label style="font-weight: 600;">Seleccione Vista : </label>
             <label class="radio-inline">
-                <input name="sector" type="radio" value="3" <?= ($sector == '3') ? 'checked' : '' ?>>
-                <span style="font-size: 14px;">S.L</span>
-            </label>
 
-            <label class="radio-inline">
-                <input name="sector" type="radio" value="1" <?= ($sector == '1') ? 'checked' : '' ?>>
-                <span style="font-size: 14px;">C.U</span>
-            </label>
+                <a class="enlaceboton" href="#Tester" onclick="marcarBoton(this)">Agenda</a>
 
-            <label class="radio-inline">
-                <input name="sector" type="radio" value="2" <?= ($sector == '2') ? 'checked' : '' ?>>
-                <span style="font-size: 14px;">L.F</span>
-            </label>
 
-            <label class="radio-inline">
-                <input name="sector" type="radio" value="4" <?= ($sector == '4') ? 'checked' : '' ?>>
-                <span style="font-size: 14px;">L.H</span>
-            </label>
-
-            <label class="radio-inline">
-                <input name="sector" type="radio" value="5" <?= ($sector == '5') ? 'checked' : '' ?>>
-                <span style="font-size: 14px;">C.S.H</span>
-            </label>
-
-            <label class="radio-inline">
-                <input name="sector" type="radio" value="12" <?= ($sector == '12') ? 'checked' : '' ?>>
-                <span style="font-size: 14px;">P.G.W</span>
             </label>
             <label class="radio-inline">
-                <input name="sector" type="radio" value="6" <?= ($sector == '6') ? 'checked' : '' ?>>
-                <span style="font-size: 14px;">COSAM</span>
+                <a class="enlaceboton" href="#Teste2" onclick="marcarBoton(this)">Acto</a>
             </label>
-
-            <label class="radio-inline">
-                <input name="sector" type="radio" value="13" <?= ($sector == '13') ? 'checked' : '' ?>>
-                <span style="font-size: 14px;">L.T </span>
-            </label>
-
-
-
-            <br><br>
-
-            <input type="submit" value="Filtrar">
+        </div>
     </form>
 
     <table id="Tester" class="table table-striped table-bordered" style="width:100%">

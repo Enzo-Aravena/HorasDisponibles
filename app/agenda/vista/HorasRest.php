@@ -411,6 +411,10 @@ if (!oci_execute($statement2)) {
             <input name="sector" type="radio" onchange="this.form.submit()" value="13" <?= ($sector == '13') ? 'checked' : '' ?>>
             <span value="Filtrar" style="font-size: 14px;">L.T </span>
         </label>
+        <label class="radio-inline">
+            <input name="sector" type="radio" onchange="this.form.submit()" value="33" <?= ($sector == '33') ? 'checked' : '' ?>>
+            <span value="Filtrar" style="font-size: 14px;">C.Dental </span>
+        </label>
 
 
         <br><br>

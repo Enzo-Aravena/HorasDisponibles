@@ -3,6 +3,7 @@ include_once("../../../lib/seguridad.php");
 include_once("../../../lib/components.php");
 
 
+
 class ConexionOracle
 {
     private $server = "186.10.119.218/PDBPNLNPRoD.stacks.cl";
@@ -218,23 +219,20 @@ if (!oci_execute($statement2)) {
     <style>
         .table {
             display: none;
-
         }
-
-
+        
         #Tester:target {
             display: table;
             scroll-margin-top: 200vh;
             scroll-behavior: smooth;
         }
 
-
         #Teste2:target {
             display: table;
             scroll-margin-top: 200vh;
             scroll-behavior: smooth;
         }
-
+        
         .enlaceboton {
             font-family: verdana, arial, sans-serif;
             font-size: 10pt;
@@ -250,14 +248,11 @@ if (!oci_execute($statement2)) {
             border-bottom: 2px solid #666666;
             border-left: 1px solid #cccccc;
             border-right: 2px solid #666666;
-
         }
-
 
         .enlaceboton:active {
             background-color: grey !important;
         }
-
 
         .enlaceboton:hover {
             border-bottom: 1px solid #cccccc;
@@ -269,45 +264,80 @@ if (!oci_execute($statement2)) {
         .marcado {
             background-color: grey !important;
             cursor: not-allowed;
+        }
 
+        .selected {
+            font-weight: bold;
+            color: red;
         }
     </style>
 
+    <script>
+        // Obtener el estado del enlace guardado en el almacenamiento local al cargar la página
+        window.addEventListener('DOMContentLoaded', () => {
+            const selectedLinkId = localStorage.getItem('selectedLinkId');
+            if (selectedLinkId) {
+                const selectedLink = document.getElementById(selectedLinkId);
+                if (selectedLink) {
+                    selectedLink.classList.add('marcado');
+                }
+            }
+        });
 
+        // Marcar el enlace seleccionado y guardar su estado en el almacenamiento local
+        function marcarBoton(enlace) {
+            const botones = document.getElementsByClassName('enlaceboton');
+            for (let i = 0; i < botones.length; i++) {
+                botones[i].classList.remove('marcado');
+            }
+            enlace.classList.add('marcado');
+            guardarSeleccion(enlace.id);
+        }
+
+        // Guardar el estado del enlace seleccionado en el almacenamiento local
+        function guardarSeleccion(selectedLinkId) {
+            localStorage.setItem('selectedLinkId', selectedLinkId);
+        }
+    </script>
 </head>
-
 <body>
-
+<script>
+        // Agrega la función marcarBoton() a los enlaces
+        const enlaces = document.getElementsByClassName('enlaceboton');
+        for (let i = 0; i < enlaces.length; i++) {
+            enlaces[i].addEventListener('click', () => {
+                marcarBoton(enlaces[i]);
+            });
+        }
+    </script>
 
     <script>
-        function marcarBoton(boton) {
-            var botones = document.getElementsByClassName("enlaceboton");
-            for (var i = 0; i < botones.length; i++) {
-                botones[i].classList.remove("marcado");
+        const select = document.querySelector(".enlaceboton");
+        const options = document.querySelectorAll(".enlaceboton option");
+        
+        select.addEventListener("change", function() {
+            const url = this.options[this.selectedIndex].dataset.url;
+            if (url) {
+                localStorage.setItem("url", url);
+                location.href = url;
             }
-            boton.classList.add("marcado");
+        });
+
+        for (const option of options) {
+            const url = option.dataset.url;
+            if (url === location.href) {
+                option.setAttribute("selected", "");
+                break;
+            }
         }
     </script>
 
 
-
-    <script type="text/javascript">
-        function ver(cual) {
-            var tester = document.getElementById(cual);
-            tester.style.display = 'block';
-
-        }
-
-        function ciego(cual) {
-            var tester = document.getElementById(cual);
-            tester.style.display = 'none';
-        }
-    </script>
-
-    <br>
+ 
 
     <br><br>
     <form method="post" style="margin-top: auto;">
+    
         <br>
         <div class="form-horizontal"> &nbsp; </div>
         <div class="form-horizontal">
@@ -335,13 +365,13 @@ if (!oci_execute($statement2)) {
             </div>
         </div>
 
-        <br><br>
 
         <label style="margin-left: auto;" class="control-label col-md-1">Centro :</label>
         <label class="radio-inline" style="margin-right: 1px !important;">
-            <input name="sector" type="radio" onchange="this.form.submit()" value="0" <?= ($sector == '0') ? 'checked' : '' ?>>
-            <span style="font-size: 14px;">Todos</span>
-        </label>
+    <input name="sector" type="radio" onchange="this.form.submit()" value="0" checked="<?= ($sector == '0' || empty($sector)) ? 'checked' : '' ?>">
+    <span style="font-size: 14px;">Todos</span>
+</label>
+
 
         <label class="radio-inline">
             <input name="sector" type="radio" onchange="this.form.submit()" value="3" <?= ($sector == '3') ? 'checked' : '' ?>>
@@ -384,21 +414,20 @@ if (!oci_execute($statement2)) {
 
 
         <br><br>
-        <div>
-            <label style="font-weight: 600;">Seleccione Vista : </label>
-            <label class="radio-inline">
-
-                <a class="enlaceboton" href="#Tester" onclick="marcarBoton(this)">Agenda</a>
-
-
-            </label>
-            <label class="radio-inline">
-                <a class="enlaceboton" href="#Teste2" onclick="marcarBoton(this)">Acto</a>
-            </label>
-        </div>
+        <div id="cuadro">
+        <label style="font-weight: 600;">Seleccione Vista: </label>
+        <label class="radio-inline">
+            <a id="enlace1" class="enlaceboton" value="1" data-url="#Tester" href="#Tester" onclick="marcarBoton(this)">Agenda</a>
+        </label>
+        <label class="radio-inline">
+            <a id="enlace2" class="enlaceboton" value="2" data-url="#Teste2" href="#Teste2" onclick="marcarBoton(this)">Acto</a>
+        </label>
+    </div>
     </form>
+    
 
     <table id="Tester" class="table table-striped table-bordered" style="width:100%">
+    
         <thead>
             <tr>
                 <th>Fecha</th>
@@ -426,7 +455,7 @@ if (!oci_execute($statement2)) {
     </table>
 
     <table id="Teste2" class="table table-striped table-bordered" style="width:100%">
-        <br><br>
+       
         <thead>
             <tr>
                 <th>Fecha</th>
@@ -456,6 +485,9 @@ if (!oci_execute($statement2)) {
     <?php
     $conexion->Desconectar();
     ?>
+
+
+
 </body>
 
 </html>

@@ -140,7 +140,7 @@
 										<select class="form-control" id="habilitarDeshabilitar" name="habilitarDeshabilitar">
 											<option value="99">SELECCIONE.. </option>
 											<option value="1"> Habilitar </option>
-											<option value="0"> Deshabilitar </option>
+											<option value="0"> Deshabilitar </option> 
 										</select>
 									</div>
 								</div>

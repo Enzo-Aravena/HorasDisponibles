@@ -306,7 +306,33 @@ oci_free_statement($statement2);
         </tbody>
     </table>
 
-
+    <h2>Resultados Consulta 2</h2>
+    <table id="tabla2" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Centro</th>
+                <th>Acto</th>
+                <th>Total Cupos</th>
+                <th>Total Utilizados</th>
+                <th>Total Disponibles</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            while ($row2 = oci_fetch_array($statement2, OCI_ASSOC)) {
+                echo "<tr>";
+                echo "<td>" . $row2['FECHA'] . "</td>";
+                echo "<td>" . $row2['CENTRO'] . "</td>";
+                echo "<td>" . $row2['ACTO'] . "</td>";
+                echo "<td>" . $row2['TOTAL_CUPOS'] . "</td>";
+                echo "<td>" . $row2['TOTAL_UTILIZADOS'] . "</td>";
+                echo "<td>" . $row2['TOTAL_DISPONIBLES'] . "</td>";
+                echo "</tr>";
+            }
+            ?>
+        </tbody>
+    </table>
     <?php
     $conexion->Desconectar();
     ?>

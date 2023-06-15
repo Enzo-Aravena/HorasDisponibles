@@ -53,7 +53,7 @@ $( document ).ready(function() {
     $('#Aceptar').on("click",function(){
         var cargoAsignar = $('select[name=cargoAsignar]').val();
         var habilitarDeshabilitar = $('select[name=habilitarDeshabilitar]').val();
-        var habiDesblSapu =  $('select[name=habiDesblSapu]').val();
+        var habiDesblSapu =  $('select[name=habiDesblSapu]').val(); 
         var datos = $("#valor").val();
         var val = datos.split("_");
         var perId = val[0];

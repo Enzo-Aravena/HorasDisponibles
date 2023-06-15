@@ -15,7 +15,7 @@ foreach ($data as $fila) {
 		$sexo = $fila->sexo;
 		$cent = $fila->centro;
 		$test = $fila->clave;
-		$permisoUser = $fila->permisos;
+	
 	}	
 
 	$_SESSION["nombre"]		= $nombre;
@@ -24,7 +24,7 @@ foreach ($data as $fila) {
 	$_SESSION["centro"] 	= $cent;
 	$_SESSION["clave"] 		= $test;
 	$_SESSION['username'] 	= $datUuario;
-	$_SESSION["permisos"] 	= $permisoUser;
+
 
 
 	//echo  $_SESSION["nombre"]." ".$_SESSION["perfil"]." ".$_SESSION["sexo"]." ".$_SESSION["centro"]." ".$_SESSION["clave"]." ".$_SESSION['usuario'];

@@ -15,7 +15,7 @@
 
 	$evento = $_REQUEST['evento'];
 
-	switch ($evento) {
+	switch ($evento) { 
 	
 	case 'buscarRut':
 

@@ -127,7 +127,7 @@ $query2 = "SELECT
         (SELECT COUNT(*)
          FROM AGE_AGENDAS AGE1 JOIN AGE_CITAS CIT1 ON AGE1.AGE_ID = CIT1.AGE_ID JOIN AGE_ACTOS ACT1 ON CIT1.ACT_ID = ACT1.ACT_ID
          WHERE TRUNC(CIT1.FECHAHORA) = TRUNC(CIT.FECHAHORA) AND AGE1.CEN_ID = AGE.CEN_ID AND ACT1.DESCRIPCION = ACT.DESCRIPCION
-         AND CIT1.PAC_ID IS NOT NULL), 0) AS \"TOTAL_UTILIZADOS\",
+         AND CIT1.PAC_ID IS NOT NULL), 0) AS \"TOTAL_UTILIZADOS\",   
     NVL(
         (SELECT COUNT(*)
          FROM AGE_AGENDAS AGE1 JOIN AGE_CITAS CIT1 ON AGE1.AGE_ID = CIT1.AGE_ID JOIN AGE_ACTOS ACT1 ON CIT1.ACT_ID = ACT1.ACT_ID
@@ -299,6 +299,8 @@ if (!oci_execute($statement2)) {
             localStorage.setItem('selectedLinkId', selectedLinkId);
         }
     </script>
+
+    
 </head>
 <body>
 <script>

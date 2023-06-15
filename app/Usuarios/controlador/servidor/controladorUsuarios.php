@@ -48,7 +48,7 @@
 		$usuarios->setEstado($estado);
 		$usuarios->setHabilitarDesbl($habiDesblSapu);
 		$usuarios->setPerId($perId);
-		$data = $usuarios->AsignacionPerfilEstado($conn);
+		$data = $usuarios->AsignacionPerfilEstado($conn); 
 
 		echo json_encode($data);
 	break;

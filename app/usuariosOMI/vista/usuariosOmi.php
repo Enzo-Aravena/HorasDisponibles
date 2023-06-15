@@ -1,4 +1,5 @@
-<?php include_once("../../../lib/seguridad.php");?>
+<?php include_once("../../../lib/seguridad.php");
+echo session_id();?>
 <!DOCTYPE html>
 <html>
 <head>

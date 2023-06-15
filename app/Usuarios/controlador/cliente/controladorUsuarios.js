@@ -111,7 +111,7 @@ function buscarUsuarioOmiPorNombre(usuario){
 			var tabla="";
 			if (resultado != "" || resultado != "undefined" && resultado != "0") 
 			{
-				$("#botones").show();
+				$("#botones").show(); 
 				//limpia la tabla completa
 				$('#tabla_resultados').empty();
 					//recorre el json que trae desde el php y lo pinta en la pantalla
